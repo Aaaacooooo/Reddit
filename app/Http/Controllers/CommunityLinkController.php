@@ -10,10 +10,9 @@ class CommunityLinkController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        // 25
-        return view('community/index');
+    public function index() {
+        $links = CommunityLink::paginate(25);
+        return view('community/index', compact('links'));
     }
 
     /**
